@@ -11,7 +11,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        // Zorgt dat er maar 1 instance is
         if (Instance == null)
         {
             Instance = this;
@@ -22,27 +21,17 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void AddWater(int amount)
+    public void AddScores(int water, int soil, int animals, int plants)
     {
-        waterScore += amount;
-        Debug.Log("Water score: " + waterScore);
-    }
+        waterScore += water;
+        soilScore += soil;
+        animalsScore += animals;
+        plantsScore += plants;
 
-    public void AddSoil(int amount)
-    {
-        soilScore += amount;
-        Debug.Log("Soil score: " + soilScore);
-    }
-
-    public void AddAnimals(int amount)
-    {
-        animalsScore += amount;
-        Debug.Log("Animals score: " + animalsScore);
-    }
-
-    public void AddPlants(int amount)
-    {
-        plantsScore += amount;
-        Debug.Log("Plants score: " + plantsScore);
+        Debug.Log("Scores bijgewerkt:");
+        Debug.Log("Water in bodem: " + waterScore);
+        Debug.Log("Gezonde bodem: " + soilScore);
+        Debug.Log("Dieren: " + animalsScore);
+        Debug.Log("Plantdiversiteit: " + plantsScore);
     }
 }

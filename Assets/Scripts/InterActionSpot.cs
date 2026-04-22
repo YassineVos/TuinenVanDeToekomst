@@ -18,8 +18,14 @@ public class InteractionSpot : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && !used && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            if (used)
+            {
+                Debug.Log("Deze plek is al gebruikt.");
+                return;
+            }
+
             Interact();
         }
     }
